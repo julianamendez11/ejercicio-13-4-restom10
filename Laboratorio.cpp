@@ -13,7 +13,7 @@ int main ( void )
 {
 	ofstream outfile;
 	double omega =1;
-	double theta =0;
+	double theta =0.1;
 	outfile.open("datos.dat");
 	for ( int i =0; i < N ; i ++ )
 	{
@@ -22,6 +22,18 @@ int main ( void )
 		theta = theta + h * g ( theta , omega , i * h ) ;
 	}
 	outfile.close();
+    
+    
+	theta =0.3;
+	outfile.open("datos1.dat");
+    for ( int i =0; i < N ; i ++ )
+	{
+		outfile<<i*h<<","<<theta<<","<<omega<<endl;
+		omega = omega + h * f ( theta , omega , i * h ) ;
+		theta = theta + h * g ( theta , omega , i * h ) ;
+	}
+	outfile.close();
+    
 	return 0;
 }
 double g ( double theta0 , double omega0 , double t ) 
