@@ -24,7 +24,7 @@ int main ( void )
 	outfile.close();
     
     
-	theta =0.3;
+	theta =0.2;
 	outfile.open("datos1caotico.dat");
     for ( int i =0; i < N ; i ++ )
 	{
@@ -33,6 +33,27 @@ int main ( void )
 		theta = theta + h * g ( theta , omega , i * h ) ;
 	}
 	outfile.close();
+    
+    theta =0.3;
+	outfile.open("datos2caotico.dat");
+    for ( int i =0; i < N ; i ++ )
+	{
+		outfile<<i*h<<","<<theta<<","<<omega<<endl;
+		omega = omega + h * f ( theta , omega , i * h ) ;
+		theta = theta + h * g ( theta , omega , i * h ) ;
+	}
+	outfile.close();
+    
+    theta =0.4;
+	outfile.open("datos3caotico.dat");
+    for ( int i =0; i < N ; i ++ )
+	{
+		outfile<<i*h<<","<<theta<<","<<omega<<endl;
+		omega = omega + h * f ( theta , omega , i * h ) ;
+		theta = theta + h * g ( theta , omega , i * h ) ;
+	}
+	outfile.close();
+    
     
 	return 0;
 }
