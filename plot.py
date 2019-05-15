@@ -16,7 +16,6 @@ plt.ylabel("Angulo theta")
 plt.title("primer intento")
 plt.savefig("figura.pdf")
 plt.legend()
-plt.show()
 plt.close()
 
 
@@ -26,12 +25,12 @@ print(p)
 
 plt.figure()
 plt.plot(x, y2, 'o')
-plt.plot(x,p(x),c='red')
+plt.plot(x,p(x),c='red',label='regresion')
 plt.title('Delta de angulos en regimen no caotico')
 plt.xlabel('Tiempo')
 plt.ylabel('Log del delta de theta')
 plt.savefig('DeltaAngulosNoCaotico.pdf')
-plt.show()
+plt.legend()
 plt.close()
 
 print("El coeficiente de Lyapunov: "+str(p[1]))
