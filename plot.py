@@ -18,6 +18,9 @@ plt.legend()
 plt.show()
 plt.close()
 
+y2=np.log(np.abs(y-y1))
+p = np.poly1d(np.polyfit(x, y2, 1))
+print(p)
 
 plt.figure()
 plt.plot(x, y2, 'o')
